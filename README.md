@@ -22,7 +22,7 @@ environment:
 - 'POSTGRES_PASSWORD=secret'
 - 'POSTGRES_USER=myuser'
 ports:
-- '5432'
+- '5432':'5432'
 ```
 
 # References further
@@ -30,5 +30,6 @@ See this link to further work on this project - https://github.com/asaikali/dock
 It is to how to install pgAdmin and how now to lose logged-in session data of pgAdmin browser
 
 # Docker commands
+`open -a Docker` - to open Docker on your local macOS machine via command.
 `docker ps` - to list running docker process
 `docker exec -it -U {dbusernam} -d {dbname}` - to connect to a database in running postgres database.
