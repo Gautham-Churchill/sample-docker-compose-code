@@ -7,6 +7,8 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 
+import java.util.List;
+
 @SpringBootApplication
 public class SampleDockerComposeCodeApplication {
 
@@ -17,10 +19,10 @@ public class SampleDockerComposeCodeApplication {
 	@Bean
 	CommandLineRunner commandLineRunner(StudentRepo studentRepo) {
 		return args -> {
-			if(studentRepo.count() == 0) {
-				Student student = new Student(1, "Dave");
-				studentRepo.save(student);
-			}
+				studentRepo.save(new Student(1, "Dave"));
+
+				List<Student> studentList = studentRepo.findAll();
+				System.out.println(studentList);
 		};
 	}
 }
