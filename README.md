@@ -29,7 +29,12 @@ ports:
 See this link to further work on this project - https://github.com/asaikali/docker-compose-postgres.
 It is to how to install pgAdmin and how now to lose logged-in session data of pgAdmin browser
 
+* Reference on how to persist postgres docker container data - https://medium.com/codex/how-to-persist-and-backup-data-of-a-postgresql-docker-container-9fe269ff4334
+
 # Docker commands
-`open -a Docker` - to open Docker on your local macOS machine via command.
-`docker ps` - to list running docker process
-`docker exec -it -U {dbusernam} -d {dbname}` - to connect to a database in running postgres database.
+* `open -a Docker` - to open Docker on your local macOS machine via command.
+* `docker-compose -f {compose file name} up` - to run compose file (Skip `-f` if filename is `docker-compose.yml`)
+* `docker ps` - to list running docker process
+* `docker-compose stop` - to just stop the containers
+* `docker-compose down` - to stop and remove them.
+* `docker exec -it -U {dbusernam} -d {dbname}` - to connect to a database in running postgres database.
